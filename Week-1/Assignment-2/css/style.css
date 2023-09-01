@@ -1,1 +1,147 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
 
+* {
+	box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+ul {
+	margin: 0 5em 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+span {
+	padding: 0.5em;
+	background: #ddedff;
+}
+header {
+	background: #eee;
+}
+section {
+	text-align: center;
+}
+
+footer {
+	margin: auto;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+.main-nav a {
+	text-align: center;
+	display: block;
+	padding: 10px 15px;
+}
+.main-nav a:hover {
+	color: #3acec2;
+}
+.main-nav a {
+	font-size: .95em;
+	color: #030303;
+}
+
+/* ---- Layout Containers ---- */
+
+.name {
+	padding: 0 0.5em;
+	font-size: 1.35em;
+	margin: 0;
+}
+.banner,
+.main-footer {
+	text-align: center;
+}
+.banner {
+	color: #030303;
+	background: #ccdcee;
+	padding: 3.2em 0;
+}
+.content {
+	margin-top: 40px;
+}
+.headline {
+	font-size: 1.5em;
+}
+.row {
+	margin-top: 40px;
+	background: #fff;
+	border-radius: 5px;
+	margin: 40px auto auto auto;
+}
+.col {
+	color: #030303;
+	padding: 50px;
+	margin: 1%;
+	background: #8898aa;
+	border-radius: 5px;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+/* @media (min-width: 769px) {
+	.row {
+	  width: 90%;
+	  margin: 5px auto;
+	}
+  }
+  @media (min-width: 1025px) {
+	.row {
+	  width: 80%;
+	  max-width: 1025px;
+	}
+  }
+ */
+
+ @media (min-width: 769px) {
+    .main-header, 
+    .main-nav,
+    .row {
+      display: flex;
+    }
+
+    .main-header {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .col {
+      flex: 1 48%;
+    }
+
+    .row {
+      flex-wrap: wrap;
+      justify-content: center;
+    }  
+  }
+  
+@media (min-width: 1025px) {
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .row {
+    width: 80%;
+	max-width: 1200px;
+    flex-wrap: wrap;
+	}
+  .col {
+    flex: 1 48%;
+  }
+}
