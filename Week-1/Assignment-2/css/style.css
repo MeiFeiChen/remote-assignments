@@ -11,10 +11,11 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	font-family: 'Times New Roman', Times, serif;
 }
 
 ul {
-	margin: 0 5em 0 0;
+	
 	padding: 0;
 	list-style: none;
 }
@@ -23,13 +24,25 @@ a {
 	text-decoration: none;
 }
 span {
-	padding: 0.5em;
+	padding: 0.8em;
 	background: #ddedff;
 }
 header {
+	padding-left: 1em;
 	background: #eee;
 }
-section {
+
+h2 {
+	text-align: center;
+}
+
+/* section .row {
+	text-align:center;;
+} */
+
+p {
+	margin: 0;
+	padding: .5em 0;
 	text-align: center;
 }
 
@@ -54,12 +67,16 @@ footer {
 	font-size: .95em;
 	color: #030303;
 }
+.name a, 
+.name a:hover {
+	color: #030303;
+}
 
 /* ---- Layout Containers ---- */
 
 .name {
 	padding: 0 0.5em;
-	font-size: 1.35em;
+	font-size: 1.15em;
 	margin: 0;
 }
 .banner,
@@ -84,64 +101,51 @@ footer {
 	margin: 40px auto auto auto;
 }
 .col {
+	height: 8em;
 	color: #030303;
-	padding: 50px;
 	margin: 1%;
 	background: #8898aa;
 	border-radius: 5px;
+	flex: 1 48%;
 }
 
 /* ================================= 
   Media Queries
 ==================================== */
-
-/* @media (min-width: 769px) {
-	.row {
-	  width: 90%;
-	  margin: 5px auto;
-	}
-  }
-  @media (min-width: 1025px) {
-	.row {
-	  width: 80%;
-	  max-width: 1025px;
-	}
-  }
- */
-
  @media (min-width: 769px) {
     .main-header, 
     .main-nav,
     .row {
-      display: flex;
+    	display: flex;
     }
 
     .main-header {
-      flex-direction: column;
-      align-items: center;
+		flex-direction: column;
+		align-items: center;
     }
+	ul {
+		margin: 0;
+	}
 
-    .col {
-      flex: 1 48%;
-    }
-
-    .row {
-      flex-wrap: wrap;
-      justify-content: center;
+	.row {
+		width: 90%;
+		flex-wrap: wrap;
+		justify-content: center;
     }  
   }
   
 @media (min-width: 1025px) {
-  .main-header {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .row {
-    width: 80%;
-	max-width: 1200px;
-    flex-wrap: wrap;
+  	.main-header {
+		flex-direction: row;
+		justify-content: space-between;
+  	}
+	.row {
+		width: 80%;
+		max-width: 1200px;
+		flex-wrap: wrap;
 	}
-  .col {
-    flex: 1 48%;
-  }
+
+	ul {
+		margin: 0 3em 0 0;
+	}
 }
