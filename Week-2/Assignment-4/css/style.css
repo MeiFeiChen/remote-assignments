@@ -1,0 +1,163 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+ul {
+	
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+button {
+	padding: 0.8em;
+	background: #ddedff;
+}
+header {
+	position: fixed;
+	width: 100vw;
+	padding-left: 1em;
+	background: #eee;
+}
+
+h2 {
+	text-align: center;
+}
+
+/* section .row {
+	text-align:center;;
+} */
+
+p {
+	margin: 0;
+	padding: .5em 0;
+	text-align: center;
+}
+
+button {
+	border: none;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 1em;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+.main-nav a {
+	text-align: center;
+	display: block;
+	padding: 10px 15px;
+}
+.main-nav a:hover {
+	color: #3acec2;
+}
+.main-nav a {
+	font-size: .95em;
+	color: #030303;
+}
+.name a, 
+.name a:hover {
+	color: #030303;
+}
+
+/* ---- Layout Containers ---- */
+
+.name {
+	padding: 0 0.5em;
+	font-size: 1.15em;
+	margin: 0;
+}
+.placeholder {
+    height: 25px; 
+}
+.banner {
+	text-align: center;
+}
+.call-to-action {
+	margin-top: 40px;
+	text-align: center;
+
+}
+.banner {
+	color: #030303;
+	background: #ccdcee;
+	padding: 3.2em 0;
+}
+.content {
+	margin-top: 40px;
+}
+.headline {
+	font-size: 1.5em;
+}
+.row {
+	background: #fff;
+	border-radius: 5px;
+	margin: 40px auto 40px auto;
+}
+.col {
+	height: 8em;
+	color: #030303;
+	margin: 1%;
+	background: #8898aa;
+	border-radius: 5px;
+	flex: 1 48%;
+}
+
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+ @media (min-width: 769px) {
+    .main-header, 
+    .main-nav,
+    .row {
+    	display: flex;
+    }
+
+    .main-header {
+		flex-direction: column;
+		align-items: center;
+    }
+	ul {
+		margin: 0;
+	}
+
+	.row {
+		width: 90%;
+		flex-wrap: wrap;
+		justify-content: center;
+    }  
+  }
+  
+@media (min-width: 1025px) {
+  	.main-header {
+		flex-direction: row;
+		justify-content: space-between;
+  	}
+	.row {
+		width: 80%;
+		max-width: 1200px;
+		flex-wrap: wrap;
+	}
+
+	ul {
+		margin: 0 3em 0 0;
+	}
+}
