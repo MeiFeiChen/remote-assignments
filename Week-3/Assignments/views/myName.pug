@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title 
+  body
+    if name 
+      h1 Hello, #{name}!
+      form(action='/myName', method='post')
+        button('submit') Log out
+    else 
+      form(action='/trackName', method='get')
+        label Please enter your name: 
+          input(type='text', name='username')
+        button(type='submit') Submit

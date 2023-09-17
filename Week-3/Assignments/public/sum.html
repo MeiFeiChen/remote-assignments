@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sum Calculator</title>
+    </head>
+    <body>
+        <h3>The sum of 1+2+3+...+n is</h3>
+        <div>
+            <label>Please enter a number</label>
+                <input id="number" type="text" name="number">
+            <button onclick="sendAJAX()" type="submit">Submit</button>
+            <p></p>
+            <small class="form-alert"></small>
+            <h5></h5>
+        </div>
+    </body>
+    <script>
+        const formAlert = document.querySelector('.form-alert')
+        const h5 = document.querySelector('h5');
+        const xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function() {
+            // refresh the text content
+            h5.textContent = '';
+            formAlert.textContent = '';
+       
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    h5.textContent = xhr.responseText;
+                } else {
+                    formAlert.textContent = xhr.responseText;
+                }
+            }
+        };
+        
+        function sendAJAX(){
+            const input = document.getElementById('number').value;
+            
+            if (input) {
+                xhr.open('GET', `/data?number=${input}`);
+            } else {
+                xhr.open('GET', '/data');
+            }
+            
+            xhr.send();
+        }
+    </script>
+</html>
