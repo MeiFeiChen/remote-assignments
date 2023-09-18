@@ -5,7 +5,6 @@
 //         remainValue = target -  nums[i];
 //         if (nums.includes(remainValue, i+1)) {
 //             checkIndex = i + nums.slice(i+1).indexOf(remainValue) + 1
-//             // checkIndex = i + nums.subarray(i+1).indexOf(remainValue);
 //             return [i, checkIndex];
 //         }
 //     }
