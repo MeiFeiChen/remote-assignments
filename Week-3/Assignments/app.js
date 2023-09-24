@@ -23,9 +23,9 @@ app.get('/', (req, res) => {
 app.get('/data', (req, res) => {
     const {number} = req.query;
     if (number === undefined) {
-        res.status(401).send('Lack of Parameter');
-    } else if (isNaN(number)) {
-        res.status(401).send('Wrong Parameter');
+        res.status(400).send('Lack of Parameter');
+    } else if (isNaN(number) || number < 0) {
+        res.status(400).send('Wrong Parameter');
     } else {
         // count total in O(1)
         const num = Number(number)

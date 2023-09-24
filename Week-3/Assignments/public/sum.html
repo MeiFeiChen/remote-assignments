@@ -24,14 +24,14 @@
             // refresh the text content
             h5.textContent = '';
             formAlert.textContent = '';
-       
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    h5.textContent = xhr.responseText;
-                } else {
-                    formAlert.textContent = xhr.responseText;
-                }
+            if (xhr.readyState !== 4) return;
+            
+            if (xhr.status === 200) {
+                h5.textContent = xhr.responseText;
+            } else {
+                formAlert.textContent = xhr.responseText;
             }
+            
         };
         
         function sendAJAX(){

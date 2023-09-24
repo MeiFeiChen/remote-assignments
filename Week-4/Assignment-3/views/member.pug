@@ -1,0 +1,15 @@
+extends layout
+
+block main
+  if !user
+    .container
+        h1 請先登入
+  else
+    .card
+        img(src='https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg', alt='User', style='width:100%')
+        h1 User
+        p.title #{user}
+        form(action='/logout', method='get')
+            input.submit.logout(type='submit', value='登出')
+
+  
